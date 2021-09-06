@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Y6W-OH-hqX">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="6aQ-QZ-Mz8">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
@@ -16,16 +16,55 @@
                     <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="LoadingImage" translatesAutoresizingMaskIntoConstraints="NO" id="kM0-se-xmz">
+                                <rect key="frame" x="-90" y="0.0" width="896" height="896"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="kM0-se-xmz" secondAttribute="height" multiplier="1:1" id="gAX-Ka-iyf"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="kM0-se-xmz" firstAttribute="leading" secondItem="5EZ-qb-Rvc" secondAttribute="leading" constant="-90" id="Azn-a8-oix"/>
+                            <constraint firstAttribute="bottom" secondItem="kM0-se-xmz" secondAttribute="bottom" id="NeF-7g-d3x"/>
+                            <constraint firstItem="kM0-se-xmz" firstAttribute="width" secondItem="kM0-se-xmz" secondAttribute="height" multiplier="1:1" id="RM5-zK-zkD"/>
+                            <constraint firstItem="kM0-se-xmz" firstAttribute="top" secondItem="5EZ-qb-Rvc" secondAttribute="top" id="gFC-jN-va6"/>
+                        </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="WSv-nq-rVn"/>
+                    <nil key="simulatedTopBarMetrics"/>
+                    <connections>
+                        <outlet property="imageLeadingConstraint" destination="Azn-a8-oix" id="M5a-uR-w4E"/>
+                        <outlet property="loadingImageView" destination="kM0-se-xmz" id="KX5-RF-8FT"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="0.0" y="44"/>
+            <point key="canvasLocation" x="910.14492753623199" y="43.526785714285715"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="J9L-Un-IyS">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="6aQ-QZ-Mz8" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <nil key="simulatedTopBarMetrics"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="EvI-PL-dzK">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="Y6W-OH-hqX" kind="relationship" relationship="rootViewController" id="Kff-r6-ywd"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="psI-WH-w87" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="0.0" y="43.526785714285715"/>
         </scene>
     </scenes>
     <resources>
+        <image name="LoadingImage" width="2016" height="1512"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

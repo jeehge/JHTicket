@@ -6,9 +6,5 @@
 //
 
 enum StoryboardName: String {
-    case common = "Common"
-    case list = "List"
-    case edit = "Edit"
-    case setting = "Setting"
-    case custom = "Custom"
+    case main = "Main"
 }
