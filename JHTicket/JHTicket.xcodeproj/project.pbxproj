@@ -112,7 +112,6 @@
 		E9AA781026E262780011E01D /* DataBase */ = {
 			isa = PBXGroup;
 			children = (
-				E9AA782926E267130011E01D /* Model */,
 				E9DE230C26DFCD6C00FB05D0 /* JHTicket.xcdatamodeld */,
 				E9AA782726E2670D0011E01D /* DBManager.swift */,
 			);
@@ -134,13 +133,6 @@
 				E9AA782326E266CC0011E01D /* ColorName.swift */,
 			);
 			path = Theme;
-			sourceTree = "<group>";
-		};
-		E9AA782926E267130011E01D /* Model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Model;
 			sourceTree = "<group>";
 		};
 		E9AA782A26E267220011E01D /* Main */ = {
