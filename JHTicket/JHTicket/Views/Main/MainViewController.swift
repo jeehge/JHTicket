@@ -14,7 +14,7 @@ final class MainViewController: BaseViewController {
     @IBOutlet weak var collectionView: UICollectionView!
     
     private var calendar = Calendar(identifier: Calendar.Identifier.gregorian)
-    private let edgeInsets = UIEdgeInsets(top: 0, left: 1, bottom: 0, right: 1)
+    private let edgeInsets = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 1)
     private let topViewHeight: CGFloat = 50.0
     
     private var today = Date()
@@ -174,15 +174,15 @@ extension MainViewController: UICollectionViewDataSource, UICollectionViewDelega
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         if indexPath.section == 0 {
-            let collectionViewWidth = collectionView.frame.width
+            let collectionViewWidth = UIScreen.main.bounds.width
             return CGSize(width: collectionViewWidth, height: topViewHeight)
         } else if indexPath.section == 1 {
-            let collectionViewWidth = (collectionView.frame.width - (edgeInsets.right * (7 + 1))) / CGFloat(weekArray.count)
+			let collectionViewWidth = (UIScreen.main.bounds.width - (edgeInsets.right * 7)) / CGFloat(weekArray.count)
             let collectionViewHeight = collectionViewWidth
             return CGSize(width: collectionViewWidth, height: collectionViewHeight)
         } else {
-            let collectionViewWidth = (collectionView.frame.width - (edgeInsets.right * (7 + 1))) / CGFloat(weekArray.count)
-            let collectionViewHeight = (collectionView.frame.height - topViewHeight - collectionViewWidth) / CGFloat(numberOfWeeks)
+            let collectionViewWidth = (UIScreen.main.bounds.width - (edgeInsets.right * 7)) / CGFloat(weekArray.count)
+			let collectionViewHeight = (UIScreen.main.bounds.height - topViewHeight - collectionViewWidth) / CGFloat(numberOfWeeks)
             return CGSize(width: collectionViewWidth, height: collectionViewHeight)
         }
     }
