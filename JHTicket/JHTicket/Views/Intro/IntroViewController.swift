@@ -7,7 +7,7 @@
 
 import UIKit
 
-final class IntroViewController: BaseViewController {
+final class IntroViewController: UIViewController {
     
     // MARK: - Properties
     
@@ -50,7 +50,7 @@ final class IntroViewController: BaseViewController {
     // MARK: - Method
     @objc
     func moveToMainVC() {
-        let mainVC: MainViewController = MainViewController.viewController(from: .main)
+        let mainVC: MainViewController = MainViewController()
         mainVC.modalTransitionStyle = .crossDissolve
         navigationController?.pushViewController(mainVC, animated: false)
     }
