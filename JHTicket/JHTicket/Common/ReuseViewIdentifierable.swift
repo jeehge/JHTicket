@@ -1,5 +1,5 @@
 //
-//  CellIdentifierable.swift
+//  ReuseViewIdentifierable.swift
 //  JHTicket
 //
 //  Created by JH on 2021/09/03.
@@ -12,6 +12,10 @@ protocol ReuseViewIdentifierable { }
 extension ReuseViewIdentifierable where Self: UIView {
 	static var identifier: String {
 		return String(describing: self)
+	}
+	
+	static var supplementaryElementOfKind: String {
+		return String(describing: self) + "-element-kind"
 	}
 }
 
